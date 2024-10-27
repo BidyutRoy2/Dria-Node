@@ -40,12 +40,13 @@ source <(wget -O - https://raw.githubusercontent.com/BidyutRoy2/BidyutRoy2/refs/
 ```
 
 ### -> Create New Metamask & Import Private Key
-### -> Pick a Model, recommended with Gemini + Llama3_1_8B models
-### Example : `6,21`
+### -> Pick a Model `18,21` Then Enter
+### -> DONE. Now your node will start Downloading Model files and Testing them. Each model must pass its test, and it only depends on your system specification.
+
+## If You want To use API
 ### -> Create Gemini APIKEY: https://aistudio.google.com/app/apikey
 ### -> Get Jina API: https://jina.ai/embeddings/ (Optional Press Enter To SKIP)
 ### -> Get Serper API: https://serper.dev/api-key (Optional Press Enter To SKIP)
-### -> DONE. Now your node will start Downloading Model files and Testing them. Each model must pass its test, and it only depends on your system specification.
 
 ### Jina & Serper API key : Enter to Skip
 
