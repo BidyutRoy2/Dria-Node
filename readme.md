@@ -28,6 +28,9 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 
 ### Create New Metamask & Import Private Key
 
+### Enter the model ids : 23
+
+### Jina & Serper API key : Enter to Skip
 
 ## Earn Node-Keeper Role
 
