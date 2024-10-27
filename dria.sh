@@ -1,139 +1,32 @@
 #!/bin/bash
 
-NODENAME="drianode"
-GREENCOLOR="\e[32m"
-DEFAULTCOLOR="\e[0m"
+echo "-----------------------------------------------------------------------------"
+curl -s https://raw.githubusercontent.com/BidyutRoy2/BidyutRoy2/main/logo.sh | bash
+echo "-----------------------------------------------------------------------------"
 
-setup() {
-    curl -s https://raw.githubusercontent.com/BidyutRoy2/BidyutRoy2/main/logo.sh | bash
-    sleep 3
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-    echo "Updating & Upgrading Packages..."
-    sudo apt update -y && sudo apt upgrade -y
+# Step 1: Install Ollama
+echo "Installing Ollama..."
+curl -fsSL https://ollama.com/install.sh | sh
 
-    cd ~
-    if [ -d "drianode" ]; then
-        echo "The 'drianode' directory already exists."
-    else
-        mkdir drianode
-        echo "Created the 'drianode' directory."
-    fi
-    cd drianode
+# Step 2: Change to the home directory
+cd $HOME
 
-    if [ -d "$NODENAME" ]; then
-        echo "The '$NODENAME' directory already exists."
-    else
-        mkdir $NODENAME
-        echo "Created the '$NODENAME' directory."
-    fi
-    cd $NODENAME
-}
+# Step 3: Download the dkn-compute-node
+echo "Downloading dkn-compute-node..."
+curl -L -o dkn-compute-node.zip https://github.com/firstbatchxyz/dkn-compute-launcher/releases/latest/download/dkn-compute-launcher-linux-amd64.zip
 
-dockerSetup(){
-    if ! command -v docker &> /dev/null; then
-        echo "Installing Docker..."
-        for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
-            sudo apt-get remove -y $pkg
-        done
+# Step 4: Unzip the downloaded file
+echo "Unzipping dkn-compute-node..."
+unzip dkn-compute-node.zip
 
-        sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-        
-        sudo apt update -y && sudo apt install -y docker-ce
-        sudo systemctl start docker
-        sudo systemctl enable docker
+# Step 5: Change to the dkn-compute-node directory
+cd dkn-compute-node
 
-        echo "Installing Docker Compose..."
-        sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-        sudo chmod +x /usr/local/bin/docker-compose
+# Step 6: Run the dkn-compute-launcher
+echo "Starting dkn-compute-launcher..."
+./dkn-compute-launcher
 
-        echo "Docker installed successfully."
-    else
-        echo "Docker is already installed."
-    fi
-}
-
-installRequirements(){
-    echo "Installing Package Required by $NODENAME"
-    sleep 2
-
-    if ! command -v unzip &> /dev/null; then
-        echo "Installing Unzip..."
-        sudo apt install unzip -y
-        echo "Unzip Installed"
-    else
-        echo "Unzip is already installed."
-    fi
-
-
-    if ! command -v ollama &> /dev/null; then
-        echo "Installing Ollama..."
-        curl -fsSL https://ollama.com/install.sh | sh
-        echo "Ollama Installed"
-    else
-        echo "Ollama is already installed."
-    fi
-
-    echo "Installing $NODENAME Compute Node"
-    if [ ! -d "dkn-compute-node" ] && [ ! -f "dkn-compute-node.zip" ]; then
-        echo "Downloading dkn-compute-node.zip"
-        curl -L -o dkn-compute-node.zip https://github.com/firstbatchxyz/dkn-compute-launcher/releases/latest/download/dkn-compute-launcher-linux-amd64.zip 
-        echo "Unzipping dkn-compute-node.zip"
-        unzip dkn-compute-node.zip 
-        rm dkn-compute-node.zip 
-        cd dkn-compute-node
-    else
-        echo "dkn-compute-node folder already exists or dkn-compute-node.zip already downloaded."
-        if [ -d "dkn-compute-node" ]; then
-            cd dkn-compute-node
-        fi
-    fi
-    echo "$NODENAME Compute Node Installed"
-}
-
-finish() {
-    if ! [ -f help.txt ]; then
-        {
-            echo "Setup Complete"
-            echo "Your $NODENAME path is on ~/drianode/drianode/"
-            echo ""
-            echo "Follow this guide to start your node:"
-            echo "To start Your Node run ./dkn-compute-launcher"
-            echo "-> Enter your DKN wallet Secret key / Private Key"
-            echo "-> Before picking your models, Check the team's guide https://github.com/BidyutRoy2/Dria-Node for Recommendations"
-            echo "-> Pick a Model, recommended with Gemini + Llama3_1_8B models"
-            echo "-> Get Gemini APIKEY Here https://aistudio.google.com/app/apikey"
-            echo "-> Get Jina API: https://jina.ai/embeddings/ (Optional Press Enter To SKIP)"
-            echo "-> Get Serper API: https://serper.dev/api-key (Optional Press Enter To SKIP)"
-            echo "-> DONE. Now your node will start Downloading Model files and Testing them. Each model must pass its test, and it only depends on your system specification."
-            echo ""
-            echo "Useful Commands:"
-            echo "- Screen: 'screen -S drianode'"
-            echo "- cd drianode/drianode"
-            echo "- Restart your Dria Node: './dkn-compute-launcher'"
-            echo "- Minimze node screen: 'CTRL+A+D'"
-            echo "- Open Node screen againe: 'screen -r dria'"
-            echo "- Delete your Node: 'cd \$HOME/drianode/$NODENAME && rm -r dkn-compute-node'"
-            echo "- If you want to see this again run 'cat ~/drianode/drianode/dkn-compute-node/help.txt'"
-        } > help.txt
-    fi
-    cat help.txt
-}
-
-
-run() {
-    read -p "Do you want to run it? (y/n): " response
-    if [[ $response == "y" ]]; then
-        ./dkn-compute-launcher
-    else
-        echo "LFG"
-    fi
-}
-
-
-setup
-dockerSetup
-installRequirements
-finish
-run
+echo "Setup is complete."
