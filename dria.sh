@@ -18,7 +18,7 @@ setup() {
         mkdir drianode
         echo "Created the 'drianode' directory."
     fi
-    cd node
+    cd drianode
 
     if [ -d "$NODENAME" ]; then
         echo "The '$NODENAME' directory already exists."
