@@ -22,6 +22,19 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 
 ### Open WSL/VPS Terminal Past Code & Run this to setup your Dria Node
 
+-------------------------------------------------------------------------------------------------------------------------
+### Install Docker & Compose
+```bash
+source <(wget -O - https://raw.githubusercontent.com/BidyutRoy2/BidyutRoy2/refs/heads/main/installation/docker.sh)
+```
+
+### Install Packages
+```bash
+source <(wget -O - https://raw.githubusercontent.com/BidyutRoy2/BidyutRoy2/refs/heads/main/installation/Package.sh)
+```
+
+### Setup and Install Node
+
 ```
 [ -f dria.sh ] && rm dria.sh; wget -q https://raw.githubusercontent.com/BidyutRoy2/Dria-Node/refs/heads/main/dria.sh && sudo chmod +x dria.sh && ./dria.sh
 ```
