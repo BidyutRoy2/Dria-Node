@@ -26,9 +26,13 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 [ -f dria.sh ] && rm dria.sh; wget https://raw.githubusercontent.com/BidyutRoy2/Dria-Node/refs/heads/main/dria.sh && sudo chmod +x dria.sh && ./dria.sh || echo "Error: dria.sh could not be downloaded."
 ```
 
-### Create New Metamask & Import Private Key
-
-### Enter the model ids : 23
+### -> Create New Metamask & Import Private Key
+### -> Pick a Model, recommended with Gemini + Llama3_1_8B models
+- Exampple : `6,21`
+### -> Get Gemini APIKEY Here https://aistudio.google.com/app/apikey
+### -> Get Jina API: https://jina.ai/embeddings/ (Optional Press Enter To SKIP)
+### -> Get Serper API: https://serper.dev/api-key (Optional Press Enter To SKIP)
+### -> DONE. Now your node will start Downloading Model files and Testing them. Each model must pass its test, and it only depends on your system specification.
 
 ### Jina & Serper API key : Enter to Skip
 
