@@ -23,7 +23,7 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 ### Open WSL/VPS Terminal Past Code & Run this to setup your Dria Node
 
 ```
-[ -f setup.sh ] && rm setup.sh; wget https://raw.githubusercontent.com/Widiskel/dria-node-setup/refs/heads/master/setup.sh && sudo chmod +x setup.sh && ./setup.sh || echo "Error: setup.sh could not be downloaded."
+[ -f setup.sh ] && rm setup.sh; wget https://raw.githubusercontent.com/BidyutRoy2/Dria-Node/refs/heads/main/install.sh && sudo chmod +x setup.sh && ./setup.sh || echo "Error: setup.sh could not be downloaded."
 ```
 
 ### Create New Metamask & Import Private Key
@@ -38,12 +38,12 @@ Steps Leaderboard : https://steps.leaderboard.dria.co/
 
 ### Useful Commands
 
-Screen: `screen -S dria`
-Restart your Dria Node: `./dkn-compute-launcher`
-Minimze node screen: `CTRL+A+D`
-Open Node screen againe: `screen -r dria`
-Delete your Node: `cd \$HOME/node/$NODENAME && rm -r dkn-compute-node`
-If you want to see this again run `cat ~/node/dria/dkn-compute-node/help.txt`
+- Screen: `screen -S dria`
+- Restart your Dria Node: `./dkn-compute-launcher`
+- Minimze node screen: `CTRL+A+D`
+- Open Node screen againe: `screen -r dria`
+- Delete your Node: `cd \$HOME/node/$NODENAME && rm -r dkn-compute-node`
+- If you want to see this again run `cat ~/node/dria/dkn-compute-node/help.txt`
 
 
 # ▄︻デ𝙂𝙚𝙩 𝙇𝙖𝙩𝙚𝙨𝙩 𝘼𝙞𝙧𝙙𝙧𝙤𝙥𝙨 & 𝙐𝙥𝙙𝙖𝙩𝙚𝙨═━一
