@@ -15,15 +15,20 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl gnupg
 
-# Set up the Docker GPG key and repository
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+# Set up the Docker GPG key and repository if it doesn't already exist
+if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
+    echo "Setting up Docker GPG key..."
+    sudo install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    echo \
+      "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+else
+    echo "Docker GPG key already exists. Skipping setup."
+fi
 
 # Final update and installation of Docker
 sudo apt update -y && sudo apt upgrade -y
