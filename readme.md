@@ -23,7 +23,7 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 ### Open WSL/VPS Terminal Past Code & Run this to setup your Dria Node
 
 ```
-[ -f setup.sh ] && rm setup.sh; wget https://raw.githubusercontent.com/BidyutRoy2/Dria-Node/refs/heads/main/install.sh && sudo chmod +x setup.sh && ./setup.sh || echo "Error: setup.sh could not be downloaded."
+[ -f install.sh ] && rm install.sh; wget https://raw.githubusercontent.com/BidyutRoy2/Dria-Node/refs/heads/main/install.sh && sudo chmod +x install.sh && ./setup.sh || echo "Error: install.sh could not be downloaded."
 ```
 
 ### Create New Metamask & Import Private Key
