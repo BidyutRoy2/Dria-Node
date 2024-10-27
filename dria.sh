@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NODENAME="dria"
+NODENAME="drianode"
 GREENCOLOR="\e[32m"
 DEFAULTCOLOR="\e[0m"
 
@@ -13,10 +13,10 @@ setup() {
 
     cd ~
     if [ -d "node" ]; then
-        echo "The 'node' directory already exists."
+        echo "The 'drianode' directory already exists."
     else
         mkdir node
-        echo "Created the 'node' directory."
+        echo "Created the 'drianode' directory."
     fi
     cd node
 
@@ -110,6 +110,7 @@ finish() {
             echo ""
             echo "Useful Commands:"
             echo "- Screen: 'screen -S dria'"
+            echo "- cd drianode"
             echo "- Restart your Dria Node: './dkn-compute-launcher'"
             echo "- Minimze node screen: 'CTRL+A+D'"
             echo "- Open Node screen againe: 'screen -r dria'"
