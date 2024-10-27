@@ -12,7 +12,7 @@ setup() {
     sudo apt update -y && sudo apt upgrade -y
 
     cd ~
-    if [ -d "node" ]; then
+    if [ -d "drianode" ]; then
         echo "The 'drianode' directory already exists."
     else
         mkdir node
@@ -96,7 +96,7 @@ finish() {
     if ! [ -f help.txt ]; then
         {
             echo "Setup Complete"
-            echo "Your $NODENAME path is on ~/node/dria/"
+            echo "Your $NODENAME path is on ~/drianode/drianode/"
             echo ""
             echo "Follow this guide to start your node:"
             echo "To start Your Node run ./dkn-compute-launcher"
@@ -109,7 +109,7 @@ finish() {
             echo "-> DONE. Now your node will start Downloading Model files and Testing them. Each model must pass its test, and it only depends on your system specification."
             echo ""
             echo "Useful Commands:"
-            echo "- Screen: 'screen -S dria'"
+            echo "- Screen: 'screen -S drianode'"
             echo "- cd drianode"
             echo "- Restart your Dria Node: './dkn-compute-launcher'"
             echo "- Minimze node screen: 'CTRL+A+D'"
