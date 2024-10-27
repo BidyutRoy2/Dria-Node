@@ -28,8 +28,8 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 
 ### -> Create New Metamask & Import Private Key
 ### -> Pick a Model, recommended with Gemini + Llama3_1_8B models
-- Exampple : `6,21`
-### -> Get Gemini APIKEY Here https://aistudio.google.com/app/apikey
+### Example : `6,21`
+### -> Create Gemini APIKEY: https://aistudio.google.com/app/apikey
 ### -> Get Jina API: https://jina.ai/embeddings/ (Optional Press Enter To SKIP)
 ### -> Get Serper API: https://serper.dev/api-key (Optional Press Enter To SKIP)
 ### -> DONE. Now your node will start Downloading Model files and Testing them. Each model must pass its test, and it only depends on your system specification.
@@ -38,19 +38,19 @@ Dria | a decentralized network that allows millions of AI agents to collaborate 
 
 ## Earn Node-Keeper Role
 
-Join [Discord](https://discord.gg/dria) and Fill the [Form](https://docs.google.com/forms/u/0/d/e/1FAIpQLSeK090ejc4dg5x1ztb_yAOxGz5o1V8JUqDa-o3AwV1Lq7NpMA/viewform?pli=1) to receive role
+### Join [Discord](https://discord.gg/dria) and Fill the [Form](https://docs.google.com/forms/u/0/d/e/1FAIpQLSeK090ejc4dg5x1ztb_yAOxGz5o1V8JUqDa-o3AwV1Lq7NpMA/viewform?pli=1) to receive role
 
-## Check Your Point
-Steps Leaderboard : https://steps.leaderboard.dria.co/
+## Check Your Point : https://steps.leaderboard.dria.co
 
 ### Useful Commands
 
-- Screen: `screen -S dria`
+- Screen: `screen -S drianode`
+- `cd drianode/drianode`
 - Restart your Dria Node: `./dkn-compute-launcher`
-- Minimze node screen: `CTRL+A+D`
-- Open Node screen againe: `screen -r dria`
-- Delete your Node: `cd \$HOME/node/$NODENAME && rm -r dkn-compute-node`
-- If you want to see this again run `cat ~/node/dria/dkn-compute-node/help.txt`
+- Minimze node screen: CTRL+A+D
+- Open Node screen againe: `screen -r drianode`
+- Delete your Node: `cd $HOME/drianode/drianode && rm -r dkn-compute-node`
+- If you want to see this again run `cat ~/drianode/drianode/dkn-compute-node/help.txt`
 
 
 # ▄︻デ𝙂𝙚𝙩 𝙇𝙖𝙩𝙚𝙨𝙩 𝘼𝙞𝙧𝙙𝙧𝙤𝙥𝙨 & 𝙐𝙥𝙙𝙖𝙩𝙚𝙨═━一
