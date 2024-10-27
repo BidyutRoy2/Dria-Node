@@ -22,10 +22,14 @@ curl -L -o dkn-compute-node.zip https://github.com/firstbatchxyz/dkn-compute-lau
 echo "Unzipping dkn-compute-node..."
 unzip dkn-compute-node.zip
 
-# Step 5: Change to the dkn-compute-node directory
+# Step 5: Delete the zip file after extraction
+echo "Deleting the zip file..."
+rm dkn-compute-node.zip
+
+# Step 6: Change to the dkn-compute-node directory
 cd dkn-compute-node
 
-# Step 6: Run the dkn-compute-launcher
+# Step 7: Run the dkn-compute-launcher
 echo "Starting dkn-compute-launcher..."
 ./dkn-compute-launcher
 
