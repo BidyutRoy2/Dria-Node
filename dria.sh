@@ -110,12 +110,12 @@ finish() {
             echo ""
             echo "Useful Commands:"
             echo "- Screen: 'screen -S drianode'"
-            echo "- cd drianode"
+            echo "- cd drianode/drianode"
             echo "- Restart your Dria Node: './dkn-compute-launcher'"
             echo "- Minimze node screen: 'CTRL+A+D'"
             echo "- Open Node screen againe: 'screen -r dria'"
-            echo "- Delete your Node: 'cd \$HOME/node/$NODENAME && rm -r dkn-compute-node'"
-            echo "- If you want to see this again run 'cat ~/node/dria/dkn-compute-node/help.txt'"
+            echo "- Delete your Node: 'cd \$HOME/drianode/$NODENAME && rm -r dkn-compute-node'"
+            echo "- If you want to see this again run 'cat ~/drianode/drianode/dkn-compute-node/help.txt'"
         } > help.txt
     fi
     cat help.txt
